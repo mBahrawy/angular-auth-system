@@ -1,0 +1,114 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="card col-md-8 p-0 offset-md-2 col-12">
+            <div class="card-header">Create a new account</div>
+            <div class="card-body">
+
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+                    <div class="mb-3 row">
+                        <label for="name" class="col-3 col-form-label">Name</label>
+                        <div class="col-9">
+                    
+                          <input formControlName="name" type="text" class="form-control" 
+                            [ngClass]="{'is-invalid': 
+                                registerForm.get('name').touched &&
+                                (registerForm.get('name').hasError('pattern') ||
+                                registerForm.get('name').hasError('required')
+                              )}" id="name" placeholder="Enter your name">
+
+                          <div *ngIf="
+                            registerForm.get('name').hasError('pattern') && 
+                            !registerForm.get('name').hasError('required')" 
+                          class="invalid-feedback">Please enter a valid name</div>
+
+                          <div *ngIf="
+                          registerForm.get('name').touched &&
+                            (registerForm.get('name').hasError('required') &&
+                            !registerForm.get('name').hasError('name'))" 
+                          class="invalid-feedback">name is required</div>
+                       
+                        </div>
+                      </div>
+                    <div class="mb-3 row">
+                        <label for="email" class="col-3 col-form-label">Email</label>
+                        <div class="col-9">
+
+
+                          <input formControlName="email" type="text" class="form-control" 
+                            [ngClass]="{'is-invalid': 
+                                registerForm.get('email').touched &&
+                                (registerForm.get('email').hasError('email') ||
+                                registerForm.get('email').hasError('required')
+                              )}" id="email" placeholder="Enter your email">
+
+                          <div *ngIf="
+                            registerForm.get('email').hasError('email') && 
+                            !registerForm.get('email').hasError('required')" 
+                          class="invalid-feedback">Please enter a valid email</div>
+
+                          <div *ngIf="
+                          registerForm.get('email').touched &&
+                            (registerForm.get('email').hasError('required') &&
+                            !registerForm.get('email').hasError('email'))" 
+                          class="invalid-feedback">Email is required</div>
+
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="password" class="col-3 col-form-label">Password</label>
+                        <div class="col-9">
+                       
+                          <input formControlName="password" type="password" class="form-control" 
+                          [ngClass]="{'is-invalid': 
+                              registerForm.get('password').touched &&
+                              registerForm.get('password').hasError('required')}" 
+                          id="password" placeholder="Enter your password">
+
+                            <div *ngIf="
+                              registerForm.get('password').hasError('required') || 
+                              registerForm.get('password').touched" 
+                            class="invalid-feedback">Password is required</div>
+                      
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="password-repeat" class="col-3 col-form-label">Re-password</label>
+                        <div class="col-9">
+                  
+                          <input formControlName="passwordRepeat" type="password" class="form-control" 
+                          [ngClass]="{'is-invalid': 
+                              registerForm.get('passwordRepeat').touched &&
+                              (registerForm.get('passwordRepeat').hasError('required') ||
+                              registerForm.get('passwordRepeat').hasError('no_match')
+                              )}" id="passwordRepeat" placeholder="Repeat your password">
+
+                            <div *ngIf="
+                              !registerForm.get('passwordRepeat').hasError('no_match') &&
+                              (registerForm.get('passwordRepeat').hasError('required') || 
+                              registerForm.get('passwordRepeat').touched)" 
+                              class="invalid-feedback">Repeat password is required
+                            </div>
+                                
+                            <div *ngIf="
+                              registerForm.get('passwordRepeat').touched &&
+                              (!registerForm.get('passwordRepeat').hasError('required') &&
+                              registerForm.get('passwordRepeat').hasError('no_match'))" 
+                              class="invalid-feedback">Password repeat doesn't match
+                            </div>
+
+                        </div>
+                      </div>
+
+                      <div class="mb-3 row">
+                          <div class="col-9  d-flex gap-2 offset-3">
+                            <button type="submit" class="btn btn-sm btn-success">Create account</button>
+                            <button [routerLink]="['../login']" class="btn btn-sm btn-outline-success">login</button>
+                          </div>
+                      </div>
+    
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <h4>Super Dashboard for Admins</h4>
+    <hr>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td><button class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">delete</button></td>
+          </tr>
+          
+          <tr *ngIf="users?.length === 0">
+            <td colspan="3">No users in database to be shown</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+</div>

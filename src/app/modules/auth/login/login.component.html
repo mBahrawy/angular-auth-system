@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="card col-md-8 p-0 offset-md-2 col-12">
+        <div class="card-header">Login</div>
+            <div class="card-body">
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="">
+                    <div class="mb-3 row">
+                        <label for="email" class="col-3 col-form-label">Email</label>
+                        <div class="col-9">
+
+                          <input formControlName="email" type="text" class="form-control" 
+                            [ngClass]="{'is-invalid': 
+                                loginForm.get('email').touched &&
+                                (loginForm.get('email').hasError('email') ||
+                                loginForm.get('email').hasError('required')
+                              )}" id="email" placeholder="Enter your email">
+
+                          <div *ngIf="
+                            loginForm.get('email').hasError('email') && 
+                            !loginForm.get('email').hasError('required')" 
+                          class="invalid-feedback">Please enter a valid email</div>
+
+                          <div *ngIf="
+                          loginForm.get('email').touched &&
+                            (loginForm.get('email').hasError('required') &&
+                            !loginForm.get('email').hasError('email'))" 
+                          class="invalid-feedback">Email is required</div>
+                       
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="password" class="col-3 col-form-label">Password</label>
+                        <div class="col-9">
+
+
+                          <input formControlName="password" type="password" class="form-control" 
+                            [ngClass]="{'is-invalid': 
+                                loginForm.get('password').touched &&
+                                loginForm.get('password').hasError('required'
+                              )}" id="password" placeholder="Enter your password">
+
+                              <div *ngIf="
+                                loginForm.get('password').hasError('required') || 
+                                loginForm.get('password').touched" 
+                              class="invalid-feedback">Password is required</div>
+                        </div>
+                      </div>
+
+                      <div class="mb-3 row">
+                          <div class="col-9  d-flex gap-2 offset-3">
+                            <button type="submit" class="btn btn-sm btn-success">Login</button>
+                            <button [routerLink]="['../register']" class="btn btn-sm btn-outline-success">Register</button>
+                            <button [routerLink]="['../forgot-password']" class="btn btn-sm btn-link ms-auto">Forget password</button>
+                          </div>
+                      </div>
+    
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
