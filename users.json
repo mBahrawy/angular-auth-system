@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "622e3fcd0faa314f10cd4aa6"
+  },
+  "username": "admin",
+  "password": "$2a$10$YBce34//l7xrG/FDBsvLY.vSQNm74rKGqFDIkUmudl/YdTXRgWLCC",
+  "email": "admin@admin.com",
+  "partner": null,
+  "isSelected": false,
+  "createdAt": 1647195842271,
+  "role": "admin",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622e56fc0faa314f10cd4b0d"
+  },
+  "username": "user1",
+  "password": "$2a$10$AJenKCMdJph7yce8ndoAT.FbhcqJkc08Kh0hnjQmG76nJYbXc4Tni",
+  "email": "user1@admin.com",
+  "partner": null,
+  "isSelected": false,
+  "createdAt": 1647195842271,
+  "role": "basic",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622e57000faa314f10cd4b11"
+  },
+  "username": "user2",
+  "password": "$2a$10$nmk8qAqb8uh6TkPPZfdyQeQJcFwMR6xAQeqAv0h9ZOYMKlO7Eznd.",
+  "email": "user2@admin.com",
+  "partner": null,
+  "isSelected": false,
+  "createdAt": 1647195842271,
+  "role": "basic",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "622e57040faa314f10cd4b15"
+  },
+  "username": "user3",
+  "password": "$2a$10$WueFke5Q/M8NBwn33jSFE.TCC6oOEnu3eA6j6PyWA/68.AfcBMCYS",
+  "email": "user3@admin.com",
+  "partner": null,
+  "isSelected": false,
+  "createdAt": 1647195842271,
+  "role": "basic",
+  "__v": 0
+}]
